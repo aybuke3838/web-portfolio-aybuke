@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Projeler</title>
+  <link rel="stylesheet" href="../assets/css/css.style" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      color: var(--text-dim);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      cursor: none;
+      transition: all 0.3s var(--transition);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(168,85,247,0.2);
+      border-color: var(--purple-bright);
+      color: var(--white);
+    }
+    .project-number {
+      position: absolute;
+      top: 16px; right: 20px;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      opacity: 0.07;
+      color: var(--purple-bright);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .featured-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      z-index: 2;
+      padding: 4px 10px;
+      background: linear-gradient(135deg, var(--purple-vivid), var(--purple-glow));
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
 
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">⬡ Alex Kaya</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Ana Sayfa</a></li>
+      <li><a href="about.html">Hakkımda</a></li>
+      <li><a href="project.html" class="active">Projeler</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-enter">
+    <section style="padding-top: 120px;">
+      <div class="section-label">Portföy</div>
+      <h1 class="section-title">
+        Seçilmiş <br>
+        <span style="background:linear-gradient(135deg,var(--purple-bright),var(--accent-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Projeler</span>
+      </h1>
+      <p class="section-subtitle reveal">Yıllar içinde hayata geçirdiğim projelerin bir derlemesi. Her biri bir hikaye, bir çözüm.</p>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">Tümü</button>
+        <button class="filter-btn" onclick="filterProjects('web', this)">Web App</button>
+        <button class="filter-btn" onclick="filterProjects('ui', this)">UI/UX</button>
+        <button class="filter-btn" onclick="filterProjects('ai', this)">AI / ML</button>
+        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobil</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid" style="margin-top: 1.5rem;">
+
+        <article class="project-card reveal reveal-delay-1" data-category="web">
+          <div class="project-thumb">
+            <div class="project-thumb-pattern"></div>
+            <div class="featured-badge">⭐ Öne Çıkan</div>
+          </div>
+          <div class="project-body" style="position:relative;">
+            <span class="project-number">01</span>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+            <h3 class="project-title">E-Ticaret Platformu</h3>
+            <p class="project-desc">Gerçek zamanlı stok yönetimi, çoklu ödeme entegrasyonu ve gelişmiş analitik paneli içeren kapsamlı e-ticaret çözümü.</p>
+            <a href="#" class="project-link">Canlıya Bak <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2" data-category="ai">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#1a0035,#6b00c2)">
+            <div class="project-thumb-pattern"></div>
+          </div>
+          <div class="project-body" style="position:relative;">
+            <span class="project-number">02</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">FastAPI</span>
+            </div>
+            <h3 class="project-title">AI Analiz Aracı</h3>
+            <p class="project-desc">Makine öğrenmesi modelleriyle müşteri davranışlarını tahmin eden ve görsel raporlar üreten akıllı analitik platformu.</p>
+            <a href="#" class="project-link">GitHub <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3" data-category="ui">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#0d0025,#4a0080)">
+            <div class="project-thumb-pattern"></div>
+          </div>
+          <div class="project-body" style="position:relative;">
+            <span class="project-number">03</span>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Prototyping</span>
+            </div>
+            <h3 class="project-title">Fintech App Tasarımı</h3>
+            <p class="project-desc">Banka uygulaması için sıfırdan tasarlanan 80 ekranlık UI sistemi. Dark mode, erişilebilirlik ve animasyon kılavuzları dahil.</p>
+            <a href="#" class="project-link">Figma'ya Bak <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1" data-category="web">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#200040,#7b00d4)">
+            <div class="project-thumb-pattern"></div>
+          </div>
+          <div class="project-body" style="position:relative;">
+            <span class="project-number">04</span>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">Three.js</span>
+              <span class="project-tag">GSAP</span>
+            </div>
+            <h3 class="project-title">3D Portfolyo Sitesi</h3>
+            <p class="project-desc">WebGL tabanlı 3D elementler, smooth scroll animasyonları ve immersive kullanıcı deneyimi sunan portfolyo sitesi.</p>
+            <a href="#" class="project-link">Canlıya Bak <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2" data-category="mobile">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#0d001a,#5e0099)">
+            <div class="project-thumb-pattern"></div>
+          </div>
+          <div class="project-body" style="position:relative;">
+            <span class="project-number">05</span>
+            <div class="project-tags">
+              <span class="project-tag">React Native</span>
+              <span class="project-tag">Expo</span>
+            </div>
+            <h3 class="project-title">Sağlık Takip Uygulaması</h3>
+            <p class="project-desc">Günlük aktivite, uyku ve beslenme verilerini takip eden, AI destekli öneriler sunan mobil sağlık asistanı.</p>
+            <a href="#" class="project-link">App Store <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3" data-category="web">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#1a0030,#8b00ff)">
+            <div class="project-thumb-pattern"></div>
+          </div>
+          <div class="project-body" style="position:relative;">
+            <span class="project-number">06</span>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Socket.io</span>
+              <span class="project-tag">Redis</span>
+            </div>
+            <h3 class="project-title">Gerçek Zamanlı Dashboard</h3>
+            <p class="project-desc">WebSocket üzerinden anlık veri akışı sağlayan, özelleştirilebilir widget'larla dolu yönetim paneli.</p>
+            <a href="#" class="project-link">Demo <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2024 <span>Alex Kaya</span>. Tüm hakları saklıdır.</p>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">GH</a>
+      <a href="#" class="social-btn">LI</a>
+      <a href="#" class="social-btn">TW</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/java.js"></script>
+  <script>
+    function filterProjects(category, btn) {
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach((card, i) => {
+        const cat = card.dataset.category;
+        const show = category === 'all' || cat === category;
+        card.style.transition = 'opacity 0.4s, transform 0.4s';
+        if (show) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+          card.style.display = '';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') card.style.display = 'none';
+          }, 400);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

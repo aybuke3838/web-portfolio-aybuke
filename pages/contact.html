@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — İletişim</title>
+  <link rel="stylesheet" href="../assets/css/css.style" />
+</head>
+<body>
 
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">⬡ Alex Kaya</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Ana Sayfa</a></li>
+      <li><a href="about.html">Hakkımda</a></li>
+      <li><a href="project.html">Projeler</a></li>
+      <li><a href="contact.html" class="active">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-enter">
+    <section style="padding-top: 120px;">
+      <div class="section-label">Konuşalım</div>
+      <h1 class="section-title">
+        Bir Projeniz<br>
+        <span style="background:linear-gradient(135deg,var(--purple-bright),var(--accent-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">mi Var?</span>
+      </h1>
+      <p class="section-subtitle reveal">Yeni iş birlikleri, freelance projeler veya sadece merhaba demek için — her zaman buradayım.</p>
+
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div>
+          <div class="contact-info reveal">
+            <h3>Birlikte Harika <br>Şeyler Üretelim</h3>
+            <p>Projenizi dinlemek, fikir alışverişi yapmak veya sadece teknoloji hakkında sohbet etmek için mesaj gönderebilirsiniz. Genellikle 24 saat içinde yanıt veriyorum.</p>
+          </div>
+
+          <div class="contact-links reveal reveal-delay-1">
+            <a href="mailto:alex@example.com" class="contact-link-item">
+              <div class="contact-link-icon">✉</div>
+              <div>
+                <div style="font-weight:600; font-size:0.9rem;">E-posta</div>
+                <div style="font-size:0.82rem; opacity:0.7; margin-top:2px;">alex@example.com</div>
+              </div>
+            </a>
+            <a href="#" class="contact-link-item">
+              <div class="contact-link-icon" style="font-size:0.85rem; font-weight:700; font-family:var(--font-display);">GH</div>
+              <div>
+                <div style="font-weight:600; font-size:0.9rem;">GitHub</div>
+                <div style="font-size:0.82rem; opacity:0.7; margin-top:2px;">github.com/alexkaya</div>
+              </div>
+            </a>
+            <a href="#" class="contact-link-item">
+              <div class="contact-link-icon" style="font-size:0.85rem; font-weight:700; font-family:var(--font-display);">LI</div>
+              <div>
+                <div style="font-weight:600; font-size:0.9rem;">LinkedIn</div>
+                <div style="font-size:0.82rem; opacity:0.7; margin-top:2px;">linkedin.com/in/alexkaya</div>
+              </div>
+            </a>
+            <a href="#" class="contact-link-item">
+              <div class="contact-link-icon">📍</div>
+              <div>
+                <div style="font-weight:600; font-size:0.9rem;">Konum</div>
+                <div style="font-size:0.82rem; opacity:0.7; margin-top:2px;">İstanbul, Türkiye</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Availability Badge -->
+          <div style="margin-top: 2rem;" class="reveal reveal-delay-2">
+            <div style="display:inline-flex; align-items:center; gap:10px; padding:12px 20px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:12px;">
+              <span style="width:8px; height:8px; background:#10b981; border-radius:50%; animation:pulse 2s infinite; display:block;"></span>
+              <span style="font-family:var(--font-display); font-size:0.82rem; font-weight:600; color:#6ee7b7; letter-spacing:0.05em;">Şu an freelance projelere açığım</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="reveal reveal-delay-2">
+          <form class="contact-form" onsubmit="return false;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+              <div class="form-group">
+                <label>Adınız</label>
+                <input type="text" placeholder="Ali Yılmaz" />
+              </div>
+              <div class="form-group">
+                <label>Soyadınız</label>
+                <input type="text" placeholder="Demir" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>E-posta</label>
+              <input type="email" placeholder="ali@ornek.com" />
+            </div>
+            <div class="form-group">
+              <label>Konu</label>
+              <input type="text" placeholder="Proje Fikri / İş Birliği / Diğer" />
+            </div>
+            <div class="form-group">
+              <label>Mesajınız</label>
+              <textarea placeholder="Projenizi veya fikrinizi anlatın..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+              <span>Mesaj Gönder</span>
+              <span>→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Strip -->
+    <div class="glow-divider"></div>
+    <section style="text-align:center; padding: 80px 5%;">
+      <p style="font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--purple-bright); font-family:var(--font-display); font-weight:600; margin-bottom:1rem;" class="reveal">Hazır mısınız?</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,5vw,4rem); font-weight:800; letter-spacing:-0.04em; margin-bottom:2rem;" class="reveal reveal-delay-1">
+        Hayalinizdeki Projeyi<br>
+        <span style="background:linear-gradient(135deg,var(--purple-bright),var(--accent-pink),var(--accent-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:gradientShift 4s ease-in-out infinite;">Birlikte Hayata Geçirelim</span>
+      </h2>
+      <div class="reveal reveal-delay-2">
+        <a href="mailto:alex@example.com" class="btn-primary" style="font-size:1rem; padding:16px 40px;">
+          <span>alex@example.com</span>
+          <span>✉</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2024 <span>Alex Kaya</span>. Tüm hakları saklıdır.</p>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">GH</a>
+      <a href="#" class="social-btn">LI</a>
+      <a href="#" class="social-btn">TW</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/java.js"></script>
+</body>
+</html>

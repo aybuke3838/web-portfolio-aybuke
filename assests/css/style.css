@@ -59,17 +59,7 @@ ul { list-style: none; }
   mix-blend-mode: screen;
 }
 
-.cursor-follower {
-  position: fixed;
-  width: 36px; height: 36px;
-  border: 1.5px solid var(--purple-bright);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: all 0.12s var(--transition);
-  opacity: 0.6;
-}
+
 
 body:hover .cursor { opacity: 1; }
 a:hover ~ .cursor, button:hover ~ .cursor { width: 20px; height: 20px; }

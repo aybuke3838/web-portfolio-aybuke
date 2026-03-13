@@ -44,20 +44,7 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
-/* ===========================
-   CUSTOM CURSOR
-=========================== */
-.cursor {
-  position: fixed;
-  width: 12px; height: 12px;
-  background: var(--purple-bright);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s var(--transition), height 0.2s var(--transition), background 0.2s;
-  mix-blend-mode: screen;
-}
+
 
 
 

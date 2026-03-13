@@ -1,4 +1,6 @@
 # web_portfolio_template
+# Site hakkında
+Bu benim kişisel portfolyo web-sitem. 
 # Kullanılan yazılım dilleri
 Javascript,html,css
 # Canlı link
